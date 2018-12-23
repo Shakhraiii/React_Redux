@@ -1,0 +1,21 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: Test01React
+  host: localhost
+  port: 5432
+  username: test01react
+  password: aqwe123
+ 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: Test01React_development
+
+ 
+test:
+  <<: *default
+  database: Test01React_test
+
